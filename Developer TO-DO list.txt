@@ -1,0 +1,33 @@
+10/31/20 update:
+Because I can't enable network discovery on at work I am unable to create an intranet using the remote
+comp as a host computer. This can work on my personal comp with my personal router.
+
+Since it's not possible to do this at work without putting this on the web (will need a login page,
+security, and battle it out with security department)...I don't think it's worth the hassle to continue
+the project unless it's to make my own portfolio.
+
+Below is still the list required to make a functional form with data validation with postgreSQL..
+-----
+
+need the follow with priority on functionality over looks:
+
+1. create simple script that checks if i can add record into work database
+2. need another string txt box for vendor number
+3. need a dropdown menu that has a list of report (late, open, projection), go for dynamic if possible
+4. validate with another table in database to see if record exist(tip: Already have something like this
+   in my guard clauses so use that for my "vlookup checks")
+5. validate email functionality (tip: use WTForms)
+6. update field functionality (tip: create a two more boxes; current record and revision record)
+7. venv and test web app works there (copy&paste existing)
+
+
+
+
+
+Report database schema will be as followed:
+PK vendor key
+PK vendor gs
+name
+PK email
+Report Name
+

@@ -1,0 +1,25 @@
+<!-- Extend to layout.html will take that file's whole format. Block content will be entered into layout.html's paramaters. -->
+<!-- Import render_field.html will import the jinja macro function.  -->
+
+{% extends "layout.html" %}
+{% from "_render_field.html" import render_field, flash_field %}
+
+{% block content %}
+
+  <br><br>
+
+  <form class="" action="{{ url_for('form') }}" method="post">
+      {{form.csrf_token}}
+
+      {{form.form_action.label}}
+      {{render_field(form.form_action) }}
+      <br>
+      {{form.email.label}}
+      {{ render_field(form.email) }}
+      <br>
+      <input type="submit" value="Submit" class="btn btn-secondary">
+      <br><br>
+      {{ flash_field()}}
+
+  </form>
+{% endblock content %}

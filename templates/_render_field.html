@@ -1,0 +1,21 @@
+{% macro render_field(field) %}
+  {{ field.lable }}
+  {{ field(**kwargs) | safe }}
+  <ul>
+  {% for error in field.errors %}
+    <li style="color:white;"> {{ error }} </li>
+  {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% macro flash_field() %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flashes">
+      {% for message in messages %}
+        <li style="color:white;"> {{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+{% endmacro %}
